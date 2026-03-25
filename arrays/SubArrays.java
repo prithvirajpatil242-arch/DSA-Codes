@@ -1,4 +1,6 @@
 import java.util.*;
+
+
 public class SubArrays {
     public static void printSubarray(int numbers []){
         for(int i = 0 ; i < numbers.length;i++){
