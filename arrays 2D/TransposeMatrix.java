@@ -1,35 +1,38 @@
-public class TransposeMatrix {
+import java.util.Scanner;
 
+public class TransposeMatrix {
     public static void main(String[] args) {
 
-        int matrix[][] = {
-            {1, 2, 3},
-            {4, 5, 6}
-        };
+        Scanner sc = new Scanner(System.in);
 
-        int rows = matrix.length;
-        int cols = matrix[0].length;
+        // Input rows and columns
+        System.out.print("Enter number of rows: ");
+        int rows = sc.nextInt();
 
-        // Transpose matrix will be cols x rows
+        System.out.print("Enter number of columns: ");
+        int cols = sc.nextInt();
+
+        int matrix[][] = new int[rows][cols];
+
+        // Input matrix elements
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+
+        // Transpose matrix (cols x rows)
         int transpose[][] = new int[cols][rows];
 
-        // Finding transpose
+        // Compute transpose
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 transpose[j][i] = matrix[i][j];
             }
         }
 
-        // Printing original matrix
-        System.out.println("Original Matrix:");
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        // Printing transpose matrix
+        // Output transpose matrix
         System.out.println("\nTranspose Matrix:");
         for (int i = 0; i < cols; i++) {
             for (int j = 0; j < rows; j++) {
@@ -37,5 +40,7 @@ public class TransposeMatrix {
             }
             System.out.println();
         }
+
+        sc.close();
     }
 }
